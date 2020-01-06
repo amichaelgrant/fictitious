@@ -1,5 +1,21 @@
 ###### Artifact-Uprising Demo
 
+# Usage
+There are 4 main actionable items that are exposed by client.
+* Products
+* Cart
+* Add to cart
+* Orders
+
+The `products` menu item displays a list of products that exist within the
+system. Each product listing has an accompanying `Add to cart` command item 
+that lets users add a given product to a globally available cart.
+Users can view the cart contents by clicking on the cart, this should display a
+page of items the user has added to the cart. From the cart view, the user should
+see total cost of all items and an `Order` button that allows the user to place
+an order. Users can see all orders placed by clicking on the `Orders` menu item.
+
+
 # Client
 This is based on React.
 
