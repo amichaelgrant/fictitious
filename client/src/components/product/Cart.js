@@ -26,7 +26,7 @@ const Cart = ({}) => {
       updateItem(item, qty);
     };
   };
-  
+
   const computeTotal = (itms) => {
     let total = 0;
     itms.forEach((itm) => {
@@ -41,7 +41,7 @@ const Cart = ({}) => {
       setItems(listItems());
     });
   },[]);
-  
+
 
   return (
     <div className="cart">
@@ -78,7 +78,16 @@ const Cart = ({}) => {
             {items && items.length > 0 && (
               <button className="button is-danger is-large is-uppercase"
                 onClick={() => {
-                  const cartItems = listItems().map(({id, quantity}) => ({product: id, quantity}));
+                  //const cartItems = listItems().map(({id, quantity}) => ({product: id, quantity}));
+                  const cartItems = listItems().map(p => {
+                    console.log("p========", p);
+                    return {
+                      product: p.id,
+                      quantity: p.quantity,
+                      name: p.name,
+                      price: p.price
+                    };
+                  });
                   console.log("cartItems: ", cartItems);
                   createOrder({items: cartItems})
                   .then((r) => {

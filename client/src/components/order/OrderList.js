@@ -2,13 +2,13 @@ import React, {Fragment} from 'react';
 
 
 function OrderList({items, onItemClick}) {
-	
+
 	const onClick = (item) => {
 		return(evt) => {
 			onItemClick && onItemClick(item);
 		}
 	};
-	
+
 	return (
 		<div className="product-list">
 			{items && (
@@ -18,11 +18,11 @@ function OrderList({items, onItemClick}) {
 							<tr key={item.id}>
 								<td>
 									<div>{item.id}</div>
-									<div>{item.created}</div>
+									<div className="tag">{item.created}</div>
 								</td>
 								<td>
 									{item.items.map((itm) => (
-										<div>{itm.product} ({itm.quantity})</div>
+										<div>{itm.name} ({itm.quantity}) @ ({itm.price})</div>
 									))}
 								</td>
 							</tr>

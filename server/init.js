@@ -1,4 +1,4 @@
-require('./mongo')();
+if(!global.db) require('./mongo')();
 const debug = require('debug')('server:init');
 const {v4} = require('uuid');
 const faker = require('faker');
@@ -33,3 +33,5 @@ function InitWithSampleData(){
 };
 
 InitWithSampleData();
+
+module.exports = InitWithSampleData;

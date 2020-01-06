@@ -1,0 +1,24 @@
+version: "3"
+services:
+  client:
+    restart: always
+    build: ./client/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    environment:
+      - APIHOST=http://server:8000
+  server:
+    restart: always
+    build: ./server/
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/fictitious
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"

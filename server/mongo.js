@@ -2,7 +2,7 @@ const debug = require('debug')('server:mongo');
 const deasync = require('deasync');
 const mongoClient = require('mongodb').MongoClient;
 const mongoOptions = {};
-const mongoUrl = "mongodb://localhost:27017/fictitious";
+const mongoUrl = process.env.MONGO_URL || "mongodb://localhost:27017/fictitious";
 
 /**
 * We do not want to do this asynchronously

@@ -6,6 +6,9 @@ const orderSchema = yup.object().shape({
     yup.object().shape({
       product: yup.string().required(),
       quantity: yup.number().required().positive().integer(),
+
+      name: yup.string().required(),
+      price: yup.string().required()
     })
   )
   .min(1)
