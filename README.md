@@ -26,7 +26,7 @@ Populate the API server with sample product data.
 * Change directory to the server; `cd fictitious/server`
 * Run the command `npm run init` to generate mock data for testing
 
-###### Starting Services With Docker Compose
+# Starting Services With Docker Compose
 This is not fully wired and so might not work very well. I would suggest testing
 using above approach instead.
 * Clone the repo with `git clone https://github.com/amichaelgrant/fictitious.git`
